@@ -18,6 +18,10 @@ export class RegistroMercanciaComponent implements OnInit {
     this.colores = ["Blanco", "Negro", "Azul", "Rojo", "Amarillo"];
   }
 
+  onUploadFinish(event) {
+    console.log(event);
+  }
+
   guardar() {
     if (!this.formMercancia.valid) {
       alert("Por favor corrija los errores para poder continuar.");

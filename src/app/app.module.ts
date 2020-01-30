@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { ImageUploadModule } from 'angular2-image-upload';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -21,6 +22,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { RegistroMercanciaComponent } from './registro-mercancia/registro-mercancia.component';
 import { NavImagesComponent } from './nav-images/nav-images.component';
+import { HttpClientModule } from '@angular/common/http';
 
 export const routes: Routes = [
   {
@@ -101,6 +103,7 @@ export const routes: Routes = [
     ListadoPagosComponent,
     RegistroMercanciaComponent,
     NavImagesComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -108,10 +111,12 @@ export const routes: Routes = [
     FormsModule,
     NgbModule, ChartsModule,
     NgbCarouselModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ImageUploadModule.forRoot(),
+    HttpClientModule
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
