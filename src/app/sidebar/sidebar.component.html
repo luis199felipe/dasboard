@@ -42,25 +42,25 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a [routerLink]="['cliente']" class="nav-link">
+              <a [routerLink]="['/cliente']" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Listado de clientes</p>
               </a>
             </li>
             <li class="nav-item">
-              <a [routerLink]="['credito']" class="nav-link">
+              <a [routerLink]="['/credito']" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Listado de Creditos</p>
               </a>
             </li>
             <li class="nav-item">
-              <a [routerLink]="['pago']" class="nav-link">
+              <a [routerLink]="['/pago']" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Listado de Pagos</p>
               </a>
             </li>
             <li class="nav-item">
-              <a [routerLink]="['almacen','listado']" class="nav-link">
+              <a [routerLink]="['/almacen','listado']" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Listado de almacenes</p>
               </a>
@@ -77,15 +77,21 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a [routerLink]="['almacen/nuevo']" class="nav-link">
+              <a [routerLink]="['/almacen/nuevo']" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Nuevo almacen</p>
               </a>
             </li>
             <li class="nav-item">
-              <a [routerLink]="['credito/nuevo']" class="nav-link">
+              <a [routerLink]="['/credito/nuevo']" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Nuevo credito</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/mercancia/nuevo']" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Nueva mercancía</p>
               </a>
             </li>
           </ul>

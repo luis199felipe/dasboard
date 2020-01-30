@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -19,10 +19,25 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 import { ChartsModule } from 'ng2-charts';
+import { RegistroMercanciaComponent } from './registro-mercancia/registro-mercancia.component';
+import { NavImagesComponent } from './nav-images/nav-images.component';
 
 export const routes: Routes = [
   {
     path: '', component: TableroComponent,
+  },
+  {
+    path: 'mercancia', children: [
+      {
+        path: '', component: ListadoAlmacenesComponent,
+      },
+      {
+        path: 'listado', component: ListadoAlmacenesComponent,
+      },
+      {
+        path: 'nuevo', component: RegistroMercanciaComponent
+      }
+    ]
   },
   {
     path: 'almacen', children: [
@@ -84,12 +99,15 @@ export const routes: Routes = [
     NuevoCreditoComponent,
     ListadoCreditosComponent,
     ListadoPagosComponent,
+    RegistroMercanciaComponent,
+    NavImagesComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     NgbModule, ChartsModule,
+    NgbCarouselModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],

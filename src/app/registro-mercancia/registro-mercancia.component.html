@@ -1,0 +1,185 @@
+<br>
+<div class="container-fluid">
+
+  <div class="card">
+    <div class="card-header text-center">
+      <h3>Registro de mercancía</h3>
+    </div>
+    <div class="card-body">
+
+
+      <form [formGroup]="formMercancia" novalidate>
+        <div class="row">
+          <div class="col-8">
+
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+
+              <input type="text" name="nombre" formControlName="nombre" class="form-control">
+
+              <small class="text-muted" style="color: brown;" *ngIf="formMercancia.get('nombre').hasError('required')">
+                <p style="color: brown;">Este campo es requerido.</p>
+              </small>
+
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="marca">Marca:</label>
+                <select name="marca" formControlName="marca" class="form-control">
+                  <option *ngFor="let marca of marcas; let i=index" [value]="i">{{marca}}</option>
+                </select>
+                <small class="text-muted" style="color: brown;" *ngIf="formMercancia.get('marca').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="genero">Genero:</label>
+                <select name="genero" formControlName="genero" class="form-control">
+                  <option value="0" selected>Dama</option>
+                  <option value="1">Hombre</option>
+                </select>
+                <small class="text-muted" style="color: brown;"
+                  *ngIf="formMercancia.get('genero').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="referencia">Referencia:</label>
+                <input type="text" readonly name="referencia" formControlName="referencia" class="form-control">
+                <small class="text-muted" style="color: brown;"
+                  *ngIf="formMercancia.get('referencia').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="talla">Tamaño (Talla) :</label>
+                <input type="number" name="talla" formControlName="talla" class="form-control">
+                <small class="text-muted" style="color: brown;" *ngIf="formMercancia.get('talla').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+                <small class="text-muted" style="color: brown;" *ngIf="formMercancia.get('talla').errors?.invalidRange">
+                  <p style="color: brown;">Rango invalido de talla</p>
+                </small>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" name="cantidad" formControlName="cantidad" class="form-control">
+                <small class="text-muted" style="color: brown;"
+                  *ngIf="formMercancia.get('cantidad').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+                <small class="text-muted" style="color: brown;"
+                  *ngIf="formMercancia.get('cantidad').errors?.invalidRange">
+                  <p style="color: brown;">Rango invalido de cantidad</p>
+                </small>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="color">Color:</label>
+                <select name="color" formControlName="color" class="form-control">
+                  <option *ngFor="let color of colores; let i=index" [value]="i">{{color}}</option>
+                </select>
+                <small class="text-muted" style="color: brown;" *ngIf="formMercancia.get('color').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="subreferencia">Subreferencia:</label>
+                <input type="text" name="subreferencia" formControlName="subreferencia" class="form-control">
+                <small class="text-muted" style="color: brown;"
+                  *ngIf="formMercancia.get('subreferencia').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="ubicacion">Ubicacion:</label>
+                <input type="text" name="ubicacion" formControlName="ubicacion" class="form-control">
+                <small class="text-muted" style="color: brown;"
+                  *ngIf="formMercancia.get('ubicacion').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="precio">Precio:</label>
+                <input type="number" name="precio" formControlName="precio" class="form-control">
+                <small class="text-muted" style="color: brown;"
+                  *ngIf="formMercancia.get('precio').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="costo">Costo:</label>
+                <input type="number" name="costo" formControlName="costo" class="form-control">
+                <small class="text-muted" style="color: brown;" *ngIf="formMercancia.get('costo').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group col-4 text-center">
+
+            <img src="assets/img/upload.svg" alt="">
+
+          </div>
+        </div>
+        <hr>
+        <div class="card-header text-center">
+          <h3>Translado</h3>
+        </div>
+        <div class="card-body">
+
+
+          <div class="form-row">
+            <div class="form-group col-9">
+              <label for="producto">Producto:</label>
+              <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">O</div>
+                </div>
+                <input type="text" name="producto" formControlName="producto" class="form-control">
+                <small class="text-muted" style="color: brown;"
+                  *ngIf="formMercancia.get('producto').hasError('required')">
+                  <p style="color: brown;">Este campo es requerido.</p>
+                </small>
+              </div>
+            </div>
+            <div class="form-group col-sm-3">
+              <label for="devolucion">Devolucion:</label>
+              <select name="devolucion" formControlName="devolucion" class="form-control">
+                <option value="0" selected>Si</option>
+                <option value="1">No</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="deAlmacen">De Almacen:</label>
+              <input type="text" name="deAlmacen" formControlName="deAlmacen" class="form-control">
+              <small class="text-muted" style="color: brown;"
+                *ngIf="formMercancia.get('deAlmacen').hasError('required')">
+                <p style="color: brown;">Este campo es requerido.</p>
+              </small>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="aAlmacen">A Almacen:</label>
+              <input type="text" name="aAlmacen" formControlName="aAlmacen" class="form-control">
+              <small class="text-muted" style="color: brown;"
+                *ngIf="formMercancia.get('aAlmacen').hasError('required')">
+                <p style="color: brown;">Este campo es requerido.</p>
+              </small>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
