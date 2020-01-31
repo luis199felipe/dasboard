@@ -1,0 +1,25 @@
+<br>
+<div class="container-fluid">
+  <div class="card">
+    <h5 class="card-header">Inventario</h5>
+    <div class="card-body">
+
+
+      <div class="card-columns">
+        <div class="card" *ngFor="let prod of misProductos;let i=index;">
+          <img src="{{prod.img}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{prod.nombre}}</h5>
+            <p class="card-text">{{prod.descripcion }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Precio: {{prod.precio | number:'1.0-0' }}</li>
+          </ul>
+          <div class="card-body">
+            <a [routerLink]="['/mercancia',prod.idProducto]" class="btn btn-primary btn-block">Ver más...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

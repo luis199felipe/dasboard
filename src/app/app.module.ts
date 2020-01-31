@@ -23,6 +23,10 @@ import { ChartsModule } from 'ng2-charts';
 import { RegistroMercanciaComponent } from './registro-mercancia/registro-mercancia.component';
 import { NavImagesComponent } from './nav-images/nav-images.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InventarioComponent } from './inventario/inventario.component';
+import { ProductosService } from './inventario/productos.service';
+import { ProductoPageComponent } from './producto-page/producto-page.component';
+
 
 export const routes: Routes = [
   {
@@ -31,13 +35,16 @@ export const routes: Routes = [
   {
     path: 'mercancia', children: [
       {
-        path: '', component: ListadoAlmacenesComponent,
+        path: '', component: InventarioComponent,
       },
       {
-        path: 'listado', component: ListadoAlmacenesComponent,
+        path: 'listado', component: InventarioComponent,
       },
       {
         path: 'nuevo', component: RegistroMercanciaComponent
+      },
+      {
+        path: ':id', component: ProductoPageComponent
       }
     ]
   },
@@ -103,6 +110,8 @@ export const routes: Routes = [
     ListadoPagosComponent,
     RegistroMercanciaComponent,
     NavImagesComponent,
+    InventarioComponent,
+    ProductoPageComponent,
 
   ],
   imports: [
@@ -116,7 +125,7 @@ export const routes: Routes = [
     HttpClientModule
   ],
   exports: [RouterModule],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, ProductosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <div class="card animated fadeIn fast">
+    <div class="card-header">
+      Producto
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-8">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+
+            <input readonly value="{{miProducto.nombre}}" type="text" name="nombre" class="form-control">
+
+
+
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="marca">Marca:</label>
+              <select disabled name="marca" class="form-control">
+                <option selected> {{miProducto.marca}}</option>
+              </select>
+
+            </div>
+            <div class="form-group col-md-4">
+              <label for="genero">Genero:</label>
+              <select disabled name="genero" class="form-control">
+                <option value="0" selected> {{miProducto.genero}}</option>
+              </select>
+
+            </div>
+            <div class="form-group col-md-4">
+              <label for="referencia">Referencia:</label>
+              <input readonly value="{{miProducto.referencia}}" type="text" readonly name="referencia"
+                class="form-control">
+
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="talla">Tamaño (Talla) :</label>
+              <input readonly value="{{miProducto.talla}}" type="number" name="talla" class="form-control">
+
+
+            </div>
+            <div class="form-group col-md-4">
+              <label for="cantidad">Cantidad:</label>
+              <input readonly value="{{miProducto.cantidad}}" type="number" name="cantidad" class="form-control">
+
+            </div>
+            <div class="form-group col-md-4">
+              <label for="color">Color:</label>
+              <select disabled name="color" class="form-control">
+                <option selected>{{miProducto.color}}</option>
+              </select>
+
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="subreferencia">Subreferencia:</label>
+              <input readonly value="{{miProducto.subreferencia}}" type="text" name="subreferencia"
+                class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="ubicacion">Ubicacion:</label>
+              <input readonly value="{{miProducto.ubicacion}}" type="text" name="ubicacion" class="form-control">
+
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="precio">Precio:</label>
+              <input readonly value="{{miProducto.precio}}" type="number" name="precio" class="form-control">
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="form-group col-4 text-center">
+
+          <img src="{{miProducto.img}}" width="400px" alt="">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
